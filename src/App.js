@@ -1,7 +1,13 @@
+import Form from './components/Form';
+import Responses from './components/Responses';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Shopify Intern Challenge!</h1>
+    <div id="app">
+      <h1>Fun With AI</h1>
+      <Form />
+      <h2>Responses:</h2>
+      <Responses />
     </div>
   );
 }
