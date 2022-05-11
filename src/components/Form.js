@@ -1,9 +1,13 @@
+import Button from './Button';
+
 const Form = () => {
   return (
     <form>
-      <h3>Enter Prompt:</h3>
-      <textarea name="" id="" cols="30" rows="10"></textarea>
-      <button type="submit">Submit!</button>
+      <label for="prompt">Enter Prompt:</label>
+      <textarea name="prompt" id="prompt" cols="30" rows="10"></textarea>
+      <Button type="submit" disabled={false}>
+        Send
+      </Button>
     </form>
   );
 };

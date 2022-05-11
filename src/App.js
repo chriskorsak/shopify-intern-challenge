@@ -3,10 +3,10 @@ import Responses from './components/Responses';
 
 function App() {
   return (
-    <div className="App">
+    <div id="app">
       <h1>Fun With AI</h1>
       <Form />
-      <h2>Responses</h2>
+      <h2>Responses:</h2>
       <Responses />
     </div>
   );

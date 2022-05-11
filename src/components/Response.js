@@ -1,10 +1,10 @@
 const Response = () => {
   return (
-    <li>
-      <div>Prompt:</div>
-      <div>What's the best programming language?</div>
-      <div>Response:</div>
-      <div>There is no such thing bro!</div>
+    <li className="response">
+      <div className="category">Prompt:</div>
+      <p className="q-and-a">What's the best programming language?</p>
+      <div className="category">Response:</div>
+      <p className="q-and-a">There is no such thing bro!</p>
     </li>
   );
 };
