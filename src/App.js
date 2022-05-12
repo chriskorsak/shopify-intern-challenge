@@ -1,13 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Form from './components/Form';
 import Responses from './components/Responses';
 
 function App() {
-  const [savedResponses, setSavedResponses] = useState([]);
+  const [savedResponses, setSavedResponses] = useState(
+    localStorage.getItem('responses')
+      ? JSON.parse(localStorage.getItem('responses'))
+      : []
+  );
 
   const saveResponse = newResponse => {
     setSavedResponses([newResponse, ...savedResponses]);
   };
+
+  useEffect(() => {
+    localStorage.setItem('responses', JSON.stringify(savedResponses));
+  }, [savedResponses]);
 
   return (
     <div id="app">
