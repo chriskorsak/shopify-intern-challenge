@@ -1,10 +1,10 @@
-const Response = () => {
+const Response = ({ prompt, response }) => {
   return (
     <li className="response">
       <div className="category">Prompt:</div>
-      <p className="q-and-a">What's the best programming language?</p>
+      <p className="q-and-a">{prompt}</p>
       <div className="category">Response:</div>
-      <p className="q-and-a">There is no such thing bro!</p>
+      <p className="q-and-a">{response}</p>
     </li>
   );
 };

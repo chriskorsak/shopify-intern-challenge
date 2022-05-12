@@ -8,14 +8,13 @@ function App() {
   const saveResponse = newResponse => {
     setSavedResponses([newResponse, ...savedResponses]);
   };
-  console.log(savedResponses);
 
   return (
     <div id="app">
       <h1>Fun With AI</h1>
       <Form saveResponse={saveResponse} />
       <h2>Responses:</h2>
-      <Responses />
+      <Responses savedResponses={savedResponses} />
     </div>
   );
 }
