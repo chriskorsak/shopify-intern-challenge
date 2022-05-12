@@ -1,13 +1,17 @@
 import Button from './Button';
 import { useState } from 'react';
+import fetchData from '../services/fetchData';
 
-const Form = ({ handleNewPrompt }) => {
+const Form = ({ saveResponse }) => {
+  // button disabled state
   const [btnDisabled, setBtnDisabled] = useState(true);
-  const [prompt, setPrompt] = useState('');
+  // error message state
   const [message, setMessage] = useState('');
+  // user input from the text area box
+  const [prompt, setPrompt] = useState('');
 
+  // form validation
   const handleTextChange = input => {
-    //form validation
     if (input === '') {
       setBtnDisabled(true);
       setMessage(null);
@@ -23,12 +27,29 @@ const Form = ({ handleNewPrompt }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //create new prompt object
-    const newPrompt = {
+
+    const data = {
       prompt: prompt,
-      date: Date.now(),
+      temperature: 0.5,
+      max_tokens: 32,
+      top_p: 1.0,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.0,
     };
-    handleNewPrompt(newPrompt);
+
+    //send data to api for response
+    fetchData(data)
+      .then(data => {
+        const response = data.choices[0].text;
+        // save response to state
+        const newResponse = {
+          prompt: prompt,
+          response: response,
+          date: Date.now(),
+        };
+        saveResponse(newResponse);
+      })
+      .catch(error => console.log(error));
   };
 
   return (
