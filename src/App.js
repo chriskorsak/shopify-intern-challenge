@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Header from './components/Header';
 import Form from './components/Form';
 import Responses from './components/Responses';
 
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div id="app">
-      <h1>Fun With AI</h1>
+      <Header />
       <Form saveResponse={saveResponse} />
       <h2>Responses:</h2>
       <Responses savedResponses={savedResponses} />

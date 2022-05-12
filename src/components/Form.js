@@ -32,7 +32,7 @@ const Form = ({ saveResponse }) => {
     const data = {
       prompt: prompt,
       temperature: 0.5,
-      max_tokens: 32,
+      max_tokens: 64,
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
@@ -66,10 +66,12 @@ const Form = ({ saveResponse }) => {
         onChange={({ target }) => handleTextChange(target.value)}
         value={prompt}
       ></textarea>
-      <Button type="submit" disabled={btnDisabled}>
-        Send
-      </Button>
-      {message && <p>{message}</p>}
+      <div className="flex">
+        <Button type="submit" disabled={btnDisabled}>
+          Send
+        </Button>
+        {message && <p className="error-message">{message}</p>}
+      </div>
     </form>
   );
 };
