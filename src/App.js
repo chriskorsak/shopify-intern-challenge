@@ -1,11 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Form from './components/Form';
 import Responses from './components/Responses';
 
 function App() {
+  const [promptToSendToAPI, setPromptToSendToAPI] = useState(
+    'tell me a ghost story'
+  );
+
+  const handleNewPrompt = prompt => {
+    setPromptToSendToAPI(prompt.prompt);
+  };
+
   useEffect(() => {
     const data = {
-      prompt: 'should i take a nap and stop working for a while?',
+      prompt: promptToSendToAPI,
       temperature: 0.5,
       max_tokens: 32,
       top_p: 1.0,
@@ -33,12 +41,12 @@ function App() {
     )
       .then(data => console.log(data.choices[0].text))
       .catch(error => console.log(error));
-  }, []);
+  }, [promptToSendToAPI]);
 
   return (
     <div id="app">
       <h1>Fun With AI</h1>
-      <Form />
+      <Form handleNewPrompt={handleNewPrompt} />
       <h2>Responses:</h2>
       <Responses />
     </div>
