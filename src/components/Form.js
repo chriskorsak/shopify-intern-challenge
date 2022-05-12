@@ -28,6 +28,7 @@ const Form = ({ saveResponse }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    // data/settings for api
     const data = {
       prompt: prompt,
       temperature: 0.5,
@@ -50,6 +51,10 @@ const Form = ({ saveResponse }) => {
         saveResponse(newResponse);
       })
       .catch(error => console.log(error));
+
+    // clear out textarea box, disable submit
+    setPrompt('');
+    setBtnDisabled(true);
   };
 
   return (
