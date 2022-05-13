@@ -14,6 +14,14 @@ function App() {
     setSavedResponses([newResponse, ...savedResponses]);
   };
 
+  const deleteResponse = id => {
+    if (window.confirm(`Are you sure you want to delete response?`)) {
+      setSavedResponses(
+        savedResponses.filter(response => response.date !== id)
+      );
+    }
+  };
+
   useEffect(() => {
     localStorage.setItem('responses', JSON.stringify(savedResponses));
   }, [savedResponses]);
@@ -23,7 +31,10 @@ function App() {
       <Header />
       <Form saveResponse={saveResponse} />
       <h2>Responses:</h2>
-      <Responses savedResponses={savedResponses} />
+      <Responses
+        savedResponses={savedResponses}
+        deleteResponse={deleteResponse}
+      />
     </div>
   );
 }
