@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Shopify Front End Developer Intern Challenge - Fun With AI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my solution to the Shopify Front End Developer Intern Challenge. I have created a user interface that makes a call to the [OpenAI API](https://beta.openai.com/) after typing in a prompt. What kind of a prompt, you may be asking? This API can answer questions, create reviews, extract keywords, generate tweets (both nice and mean), and so much more!
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [Additional Features](#additional-features)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Project Workflow](#project-workflow)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Acceptance Criteria
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+User Interface & Technical Requirements
 
-### `npm test`
+- A form for entering text prompts
+- Submitting the form sends the prompt to the OpenAI API
+- Results are displayed in a list, sorted from newest to oldest
+- Each result should include the original prompt and a response from the API
+- The HTML that ends up being served client-side should be accessible and semantic
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Additional Features
 
-### `npm run build`
+- Form validation to prevent the user from submitting an empty prompt
+- Browser local storage, which saves responses if the user leaves or reloads the page
+- Ability to delete a response from the list
+- Adding/deleting responses has subtle animation to provide a more pleasing user interface
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./app-screenshot.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Live Site URL: [Fun With AI](https://astonishing-souffle-c49e51.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React JS - JS library
+- Framer Motion - Animation
+- React-Icons
+- Browser Local Storage
+- Semantic HTML5 markup
+- CSS custom properties
+- Mobile-first workflow
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Project Workflow
 
-## Learn More
+I decided to use some of the Agile methodology workflow on this project to keep things well-defined with constant, achievable benchmarks. Before doing any coding, I created a handful of Github issues that would enable me to break up the project into bite-sized sections. For each feature, I created a feature branch in `Git`, and I created a pull request, just like how you would when working in a group. This was a great way to document the project, and I think it made for a better end result! Please check out the closed Github issues or pull requests if you'd like to see how I tackled the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Website - [Chris Korsak](https://www.chriskorsak.net)
