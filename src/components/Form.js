@@ -41,6 +41,7 @@ const Form = ({ saveResponse }) => {
     //send data to api for response
     fetchData(data)
       .then(data => {
+        console.log(data);
         const response = data.choices[0].text;
         // save response to state
         const newResponse = {
